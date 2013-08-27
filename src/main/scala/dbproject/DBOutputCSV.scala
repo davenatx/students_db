@@ -11,7 +11,7 @@ import dbproject.domain._
  * Output the contents of the database to a CSV file.
  * The Students are appended to the end of the Parent record.
  */
-object OutputCSV extends Logging {
+object DBOutputCSV extends Logging {
 
   def createCSV {
     val printWriter = new PrintWriter(exportFileName)

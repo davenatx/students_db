@@ -8,16 +8,12 @@ import scala.language.postfixOps
 import dbproject.dao._
 import dbproject.domain._
 
-/* Case class representing CSVEntry */
-case class CSVEntry(studentId: Long, campusName: String, firstName: String, lastName: String, streetName: String, apartment: String,
-  city: String, state: String, zip: String)
-
 /**
  * Import data from a CSV file and write to the database.
  * This removes duplicate Parent information represnted by
  * each Student
  */
-object ImportCSV extends Logging {
+object DBImportCSV extends Logging {
 
   // Convert line from CSV file to CSVEntry
   val csvEntryFunc = (line: String) => {

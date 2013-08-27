@@ -7,7 +7,7 @@ import com.typesafe.scalalogging.slf4j.Logging
  * Drop the tables, create the tables, and perform the import from a CSV file
  * located in the root directory
  */
-object ImportDriver extends Logging {
+object DBImportDriver extends Logging {
   def main(args: Array[String]) {
 
     logger.info("Dropping database tables")
@@ -36,6 +36,6 @@ object ImportDriver extends Logging {
     // Process only csv file in the array
     logger info ("Processing CSV File: " + files(0))
 
-    ImportCSV.processFile(files(0))
+    time("Database Import Process", DBImportCSV.processFile(files(0)))
   }
 }
