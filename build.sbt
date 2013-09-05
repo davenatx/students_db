@@ -2,7 +2,7 @@ import AssemblyKeys._
 
 name := "students_db"
 
-version := "0.2-SNAPSHOT"
+version := "0.3-SNAPSHOT"
 
 organization := "dbproject"
 

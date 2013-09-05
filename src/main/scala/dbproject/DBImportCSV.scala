@@ -65,7 +65,9 @@ object DBImportCSV extends Logging {
           /* Accumulator is not empty */
           else {
             /* Current entry has the same parent as previous, add to accumulator */
-            if (cvsEntry.firstName == previous.firstName && cvsEntry.lastName == previous.lastName) parseLine(tail, cvsEntry :: accu, cvsEntry)
+            if (cvsEntry.firstName == previous.firstName && cvsEntry.lastName == previous.lastName && cvsEntry.streetName == previous.streetName &&
+              cvsEntry.apartment == previous.apartment && cvsEntry.city == previous.city && cvsEntry.state == previous.state &&
+              cvsEntry.zip == previous.zip) parseLine(tail, cvsEntry :: accu, cvsEntry)
             /* Write the contents of the accumulator to the DB and place the current cvsEntry in new List */
             else {
               writeRecords(accu.reverse)
